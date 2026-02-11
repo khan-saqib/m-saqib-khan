@@ -81,7 +81,16 @@
         </div>
     {%- endcase -%}
   {%- endfor -%}
+<section class="blog-text-blocks">
+  <div class="blog-text-blocks__container">
+{% assign items = article.metafields.custom.sdas.value %}
 
+    {% for item in items %}
+     {% render "card-product", card_product: item %}
+    {% endfor %}
+
+  </div>
+</section>
   <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
       <span class="icon-wrap">
