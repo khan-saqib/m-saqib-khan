@@ -1,26 +1,5 @@
-{% comment %}
-  TISSO VISION – Header (Dawn Compatible)
-
-  Desktop:
-  - Logo (uses theme settings.logo + settings.logo_width)
-  - Center text
-  - CTA button
-
-  Mobile:
-  - Top bar: Hamburger (left) + Logo (center)
-  - On hamburger open: shows center text + button (like your screenshot)
-
-  Notes:
-  - Uses Dawn color schemes
-  - Logo position on desktop can be changed via CSS order settings
-  - Button hover: smooth fill to black (LTR or RTL)
-
-  Install:
-  Save as: sections/tisso-vision-header.liquid
-{% endcomment %}
-
 <section class="tv-header tv-header--{{ section.id }} color-{{ section.settings.color_scheme }} gradient" role="banner">
-  <div class="page-width">
+  <div class="page-width-cstm">
     <div class="tv-header__inner">
 
       {%- comment -%} Mobile menu button (hidden on desktop) {%- endcomment -%}
@@ -105,6 +84,9 @@
 </section>
 
 <style>
+  .page-width-cstm{
+    padding: 0 56px;
+  }
   .tv-header--{{ section.id }} {
     border-bottom: 1px solid rgba(var(--color-foreground), 0.12);
   }
@@ -210,13 +192,11 @@
 
     padding: 12px 18px;
     border-radius: 0;
-    border: 1px solid rgba(var(--color-foreground), 1);
     background: {{ section.settings.btn_bg }};
     color: {{ section.settings.btn_text }};
 
     text-decoration: none;
     font-size: {{ section.settings.btn_font_size_desktop }}px;
-    font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
 
@@ -266,6 +246,9 @@
 
   /* MOBILE */
   @media (max-width: 749px) {
+    .page-width-cstm{
+      padding: 0 10px;
+    }
     .tv-header--{{ section.id }} .tv-header__inner {
       min-height: {{ section.settings.mobile_height }}px;
       gap: 8px;
