@@ -42,7 +42,7 @@
       "type": "c-hero",
       "name": "TV – Gift Guide Hero",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "image_desktop": "shopify://shop_images/Group_1000008197.png",
         "image_mobile": "shopify://shop_images/Frame.png",
         "heading": "The Gift Guide",
