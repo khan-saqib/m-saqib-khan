@@ -508,6 +508,87 @@ display: none;
     });
   })();
 </script>
+<script>
+(function () {
+  const BONUS_HANDLE = "dark-winter-jacket";
+
+  function getSelectedColor(modal) {
+    const active = modal.querySelector(".tv-color-option.active");
+    return active ? active.getAttribute("data-color-value") : "";
+  }
+
+  function getSelectedSize(modal) {
+    const size = modal.querySelector("[data-tv-size]");
+    return size ? size.value : "";
+  }
+
+  function conditionMatched(modal) {
+    const color = getSelectedColor(modal).trim().toLowerCase();
+    const size = getSelectedSize(modal).trim().toLowerCase();
+
+    return color === "black" && (size === "medium" || size === "m");
+  }
+
+  async function getFirstAvailableVariantIdByHandle(handle) {
+    const res = await fetch(`/products/${handle}.js`);
+    const product = await res.json();
+
+    const variant = product.variants.find(v => v.available) || product.variants[0];
+    return variant ? variant.id : null;
+  }
+
+  async function addItems(items) {
+    await fetch("/cart/add.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ items })
+    });
+  }
+
+  document.querySelectorAll(".tv-qv").forEach((modal) => {
+    const form = modal.querySelector(".tv-qv-form");
+    if (!form) return;
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const mainVariantInput = form.querySelector('[name="id"]');
+      if (!mainVariantInput || !mainVariantInput.value) return;
+
+      const mainVariantId = parseInt(mainVariantInput.value, 10);
+
+      try {
+        // Always add the main product
+        const itemsToAdd = [{ id: mainVariantId, quantity: 1 }];
+
+        // If condition true -> add bonus product too
+        if (conditionMatched(modal)) {
+          const bonusVariantId = await getFirstAvailableVariantIdByHandle(BONUS_HANDLE);
+
+          if (bonusVariantId) {
+            itemsToAdd.push({ id: bonusVariantId, quantity: 1 });
+          }
+        }
+
+        // Add items
+        await addItems(itemsToAdd);
+
+        // Always go to cart
+        window.location.href = "/cart";
+
+      } catch (err) {
+        console.log("Add to cart error:", err);
+        // fallback: still go to cart
+        window.location.href = "/cart";
+      }
+    });
+  });
+})();
+</script>
+
 
 {% schema %}
 {
