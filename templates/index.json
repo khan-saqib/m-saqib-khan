@@ -1,61 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -63,13 +33,104 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "c_hero_GEA3GH": {
+      "type": "c-hero",
+      "name": "TV – Gift Guide Hero",
+      "settings": {
+        "color_scheme": "",
+        "image_desktop": "shopify://shop_images/Group_1000008197.png",
+        "image_mobile": "shopify://shop_images/Frame.png",
+        "heading": "The Gift Guide",
+        "text": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+        "button_label": "Shop now",
+        "button_link": "#",
+        "button_hover_direction": "ltr",
+        "desktop_content_position": "bottom-left",
+        "overlay_opacity": 0,
+        "bottom_text": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR",
+        "desktop_height": 680,
+        "mobile_height": 640,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "c_product_quickshop_grid_cdRXQw": {
+      "type": "c-product-quickshop-grid",
+      "blocks": {
+        "product_86tVLC": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag",
+            "plus_top": 55,
+            "plus_left": 57
+          }
+        },
+        "product_BzN98h": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "plus_top": 50,
+            "plus_left": 80
+          }
+        },
+        "product_EJdaUr": {
+          "type": "product",
+          "settings": {
+            "product": "chequered-red-shirt",
+            "plus_top": 18,
+            "plus_left": 60
+          }
+        },
+        "product_7GWNqt": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "plus_top": 18,
+            "plus_left": 68
+          }
+        },
+        "product_aBYNkE": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top",
+            "plus_top": 23,
+            "plus_left": 47
+          }
+        },
+        "product_bQYymy": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top",
+            "plus_top": 38,
+            "plus_left": 75
+          }
+        }
+      },
+      "block_order": [
+        "product_86tVLC",
+        "product_BzN98h",
+        "product_EJdaUr",
+        "product_7GWNqt",
+        "product_aBYNkE",
+        "product_bQYymy"
+      ],
+      "name": "TV - PRD Grid",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Tisso vison in the wild",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "c_hero_GEA3GH",
+    "c_product_quickshop_grid_cdRXQw"
   ]
 }

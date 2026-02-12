@@ -11,52 +11,31 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
     "header": {
       "type": "c-header",
       "settings": {
-        "logo_position": "middle-left",
-        "mobile_logo_position": "center",
-        "menu": "",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
         "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "center_text": "Find the ideal gift for your loved ones.",
+        "center_font_size_desktop": 14,
+        "center_font_size_mobile": 11,
+        "button_label": "CHOOSE GIFT",
+        "button_link": "",
+        "hover_direction": "ltr",
+        "btn_bg": "#fff24a",
+        "btn_text": "#111111",
+        "btn_hover_bg": "#000000",
+        "btn_hover_text": "#ffffff",
+        "btn_font_size_desktop": 13,
+        "logo_order": 1,
+        "center_order": 2,
+        "button_order": 3,
+        "desktop_height": 70,
+        "mobile_height": 54,
+        "logo_width_override": 190
       }
     }
   },
   "order": [
-    "announcement-bar",
     "header"
   ]
 }
