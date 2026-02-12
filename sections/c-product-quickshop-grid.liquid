@@ -8,6 +8,13 @@
 {% endcomment %}
 
 <style>
+@font-face {
+  font-family: 'Lustria';
+  src: url('https://cdn.shopify.com/s/files/1/0668/7067/3521/files/Lustria-Regular.ttf?v=1770859672') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
   /* ================================
      TV WILD GRID
   ================================ */
@@ -16,6 +23,8 @@
     font-size: 36px;
     font-weight: 400;
     margin-bottom: 30px;
+    font-family: 'Lustria';
+
   }
 
   .tv-wild__grid{
@@ -52,10 +61,10 @@
   /* + button */
   .tv-wild__plus{
     position:absolute;
-    width:28px;
-    height:28px;
+    width:22px;
+    height:22px;
     border-radius:50%;
-    background:#fff;
+    background:#F8F8F8;
     border:none;
     display:flex;
     align-items:center;
@@ -153,7 +162,12 @@
     font-size:20px;
     margin-bottom:10px;
   }
-
+.price__regular{
+  font-family: 'Lustria';
+}
+.price__sale{
+display: none;
+}
   /* ================================
      COLOR SWITCHER
   ================================ */
@@ -357,7 +371,7 @@
                     class="button button--full-width product-form__submit"
                     data-tv-atc
                 >
-                    Add to cart
+                    Add to cart →
                 </button>
                 </form>
             </div>      
@@ -452,7 +466,7 @@
         // Disable ATC if unavailable
         if (match.available) {
           atcButton.removeAttribute('disabled');
-          atcButton.textContent = 'Add to cart';
+          atcButton.textContent = 'Add to cart →';
         } else {
           atcButton.setAttribute('disabled', 'disabled');
           atcButton.textContent = 'Sold out';
