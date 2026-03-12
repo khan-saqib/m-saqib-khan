@@ -4,6 +4,92 @@ https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.css
 " rel="stylesheet">
+
+<style>
+    .mega-links-products{
+display:flex;
+gap:50px;
+align-items:flex-start;
+}
+
+
+/* LEFT LINKS */
+
+.mega-links-products__links{
+flex:1;
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.mega-link-group{
+min-width:160px;
+}
+
+.mega-link-group__title{
+font-size:15px;
+margin-bottom:10px;
+font-weight:600;
+}
+
+.mega-link-group ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.mega-link-group li{
+margin-bottom:6px;
+}
+
+.mega-link-group a{
+font-size:14px;
+color:#555;
+text-decoration:none;
+}
+
+.mega-link-group a:hover{
+color:#000;
+}
+
+
+/* PRODUCT SWIPER */
+
+.mega-links-products__products{
+flex:1;
+}
+
+.mega-product-card{
+background:#fff;
+border-radius:10px;
+padding:12px;
+text-align:center;
+}
+
+.mega-product-card img{
+width:100%;
+border-radius:8px;
+}
+
+.mega-product-card .title{
+font-size:14px;
+margin-top:6px;
+}
+
+.mega-product-card .price{
+font-size:13px;
+color:#666;
+}
+
+.add-cart{
+margin-top:8px;
+border:1px solid #ccc;
+padding:6px 12px;
+border-radius:8px;
+background:white;
+font-size:13px;
+}
+</style>
 <div class="mega-links-products">
 
   <div class="mega-links-products__links">
@@ -90,7 +176,7 @@ https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.css
 <script>
 document.querySelectorAll('.mega-products-swiper').forEach(swiperEl => {
 
-new Swiper(swiperEl, {
+new Swiper(swiperEl,{
 
 slidesPerView:2,
 spaceBetween:16,
@@ -103,6 +189,9 @@ prevEl: swiperEl.querySelector('.swiper-prev')
 breakpoints:{
 900:{
 slidesPerView:3
+},
+1200:{
+slidesPerView:4
 }
 }
 

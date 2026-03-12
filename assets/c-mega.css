@@ -250,6 +250,135 @@ background:#6e8796;
 color:white;
 }
 
+
+
+
+
+
+
+
+
+/* HEADER */
+
+.mega-header{
+background:#fff;
+border-bottom:1px solid #eee;
+position:relative;
+z-index:100;
+}
+
+.mega-header__container{
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:auto 1fr auto;
+align-items:center;
+gap:30px;
+padding:16px 24px;
+}
+
+
+/* LOGO */
+
+.mega-logo img{
+max-height:36px;
+}
+
+
+/* NAVIGATION */
+
+.mega-nav{
+display:flex;
+justify-content:center;
+gap:40px;
+}
+
+.mega-item{
+position:relative;
+}
+
+.mega-item__link{
+font-size:15px;
+font-weight:500;
+color:#222;
+text-decoration:none;
+padding:10px 0;
+display:block;
+}
+
+
+/* ICONS */
+
+.mega-icons{
+display:flex;
+gap:18px;
+align-items:center;
+}
+
+.mega-icons svg{
+width:22px;
+height:22px;
+}
+
+
+/* MOBILE HAMBURGER */
+
+.mega-mobile-toggle{
+display:none;
+flex-direction:column;
+gap:4px;
+background:none;
+border:none;
+}
+
+.mega-mobile-toggle span{
+width:20px;
+height:2px;
+background:#000;
+display:block;
+}
+
+
+
+/* DROPDOWN */
+
+.mega-dropdown{
+position:absolute;
+top:100%;
+left:50%;
+transform:translateX(-50%);
+width:100vw;
+background:#f7f3f3;
+display:none;
+padding:40px 0;
+}
+
+.mega-item:hover .mega-dropdown{
+display:block;
+}
+
+
+/* INNER WRAPPER */
+
+.mega-dropdown__container{
+max-width:1400px;
+margin:auto;
+padding:0 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media(max-width:990px){
 
 .mega-nav{
@@ -297,6 +426,72 @@ flex-direction:column;
 .mega-links-products__links,
 .mega-links-products__products{
 width:100%;
+}
+
+}
+
+
+
+
+@media (max-width: 990px){
+
+.mega-mobile-toggle{
+display:flex;
+}
+
+.mega-icons{
+margin-left:auto;
+}
+
+.mega-nav{
+position:fixed;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:white;
+flex-direction:column;
+padding:30px;
+transition:0.3s;
+}
+
+.mega-nav.open{
+left:0;
+}
+
+.mega-item{
+width:100%;
+}
+
+.mega-dropdown{
+position:fixed;
+top:0;
+left:100%;
+transform:none;
+width:100%;
+height:100%;
+padding:30px;
+background:white;
+}
+
+.mega-dropdown.active{
+left:0;
+}
+
+.mega-back{
+display:block;
+margin-bottom:20px;
+border:none;
+background:none;
+font-size:16px;
+}
+
+.mega-links-products{
+flex-direction:column;
+}
+
+.mega-bundle{
+flex-direction:column;
 }
 
 }

@@ -1,28 +1,47 @@
 {{ 'c-mega.css' | asset_url | stylesheet_tag }}
 <header class="mega-header">
 
-  <div class="mega-header__inner">
+  <div class="mega-header__container">
 
+    <!-- MOBILE TOGGLE -->
     <button class="mega-mobile-toggle">
-      ☰
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
+
+    <!-- LOGO -->
+    <div class="mega-logo">
+      <a href="{{ routes.root_url }}">
+        {% if settings.logo %}
+          {{ settings.logo | image_url: width: 300 | image_tag }}
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+    </div>
+
+
+    <!-- NAV -->
     <nav class="mega-nav">
 
       {% for block in section.blocks %}
 
-        <div class="mega-item" data-block="{{ block.type }}" {{ block.shopify_attributes }}>
+      <div class="mega-item" {{ block.shopify_attributes }}>
 
-          <a href="{{ block.settings.main_link }}" class="mega-item__link">
-            {{ block.settings.title }}
-          </a>
+        <a href="{{ block.settings.main_link }}" class="mega-item__link">
+          {{ block.settings.title }}
+        </a>
 
-          {% unless block.type == 'simple_link' %}
-          <div class="mega-dropdown">
+        {% unless block.type == 'simple_link' %}
+        <div class="mega-dropdown">
 
-            <button class="mega-back">
-              ← Back
-            </button>
+          <button class="mega-back">
+            ← Back
+          </button>
+
+          <div class="mega-dropdown__container">
 
             {% case block.type %}
 
@@ -35,13 +54,29 @@
             {% endcase %}
 
           </div>
-          {% endunless %}
 
         </div>
+        {% endunless %}
+
+      </div>
 
       {% endfor %}
 
     </nav>
+
+
+    <!-- RIGHT ICONS -->
+    <div class="mega-icons">
+
+      <a href="{{ routes.account_url }}">
+        {% render 'icon-account' %}
+      </a>
+
+      <a href="{{ routes.cart_url }}">
+        {% render 'icon-cart' %}
+      </a>
+
+    </div>
 
   </div>
 
