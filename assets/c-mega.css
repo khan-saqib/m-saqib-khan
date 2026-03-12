@@ -14,6 +14,7 @@ left:0;
 width:100%;
 background:#fff;
 display:none;
+z-index: 9;
 }
 
 .mega-item:hover .mega-dropdown{
@@ -261,6 +262,8 @@ background:white;
 flex-direction:column;
 padding:30px;
 transition:0.3s;
+z-index: 9;
+
 }
 
 .mega-nav.open{
