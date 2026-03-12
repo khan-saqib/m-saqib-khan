@@ -28,3 +28,20 @@
 
   </nav>
 </header>
+
+<script>
+    document.querySelectorAll('.mega-link').forEach(link=>{
+  link.addEventListener('click',e=>{
+    if(window.innerWidth < 990){
+      e.preventDefault()
+      link.nextElementSibling.classList.add('open')
+    }
+  })
+})
+
+document.querySelectorAll('.back-btn').forEach(btn=>{
+  btn.onclick = ()=>{
+    btn.closest('.mega-dropdown').classList.remove('open')
+  }
+})
+</script>
