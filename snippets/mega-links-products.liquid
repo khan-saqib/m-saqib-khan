@@ -1,25 +1,36 @@
 <div class="mega-links-products">
 
-  <div class="mega-links">
+  <div class="mega-links-products__links">
 
     {% for i in (1..5) %}
+
       {% assign heading = 'heading_' | append: i %}
       {% assign menu = 'menu_' | append: i %}
 
       {% if block.settings[heading] != blank %}
-        <div class="link-group">
 
-          <h4>{{ block.settings[heading] }}</h4>
+        <div class="mega-link-group">
+
+          <h4 class="mega-link-group__title">
+            {{ block.settings[heading] }}
+          </h4>
 
           <ul>
+
             {% for link in linklists[block.settings[menu]].links %}
+
               <li>
-                <a href="{{ link.url }}">{{ link.title }}</a>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
               </li>
+
             {% endfor %}
+
           </ul>
 
         </div>
+
       {% endif %}
 
     {% endfor %}
@@ -27,24 +38,69 @@
   </div>
 
 
-  <div class="mega-products swiper">
+  <div class="mega-links-products__products">
 
-    <div class="swiper-wrapper">
+    <div class="swiper mega-products-swiper">
 
-      {% for product in collections[block.settings.collection].products limit: 8 %}
-        <div class="swiper-slide">
+      <div class="swiper-wrapper">
+
+        {% for product in collections[block.settings.collection].products limit: 10 %}
+
+        <div class="swiper-slide mega-product-card">
 
           <a href="{{ product.url }}">
-            {{ product.featured_image | image_url: width: 500 | image_tag }}
-            <p>{{ product.title }}</p>
-            <span>{{ product.price | money }}</span>
+
+            {{ product.featured_image | image_url: width: 400 | image_tag }}
+
+            <p class="title">{{ product.title }}</p>
+
+            <span class="price">
+              {{ product.price | money }}
+            </span>
+
           </a>
 
+          <button class="add-cart">
+            Add to Cart
+          </button>
+
         </div>
-      {% endfor %}
+
+        {% endfor %}
+
+      </div>
+
+      <div class="swiper-nav">
+        <div class="swiper-prev"></div>
+        <div class="swiper-next"></div>
+      </div>
 
     </div>
 
   </div>
 
 </div>
+
+<script>
+document.querySelectorAll('.mega-products-swiper').forEach(swiperEl => {
+
+new Swiper(swiperEl, {
+
+slidesPerView:2,
+spaceBetween:16,
+
+navigation:{
+nextEl: swiperEl.querySelector('.swiper-next'),
+prevEl: swiperEl.querySelector('.swiper-prev')
+},
+
+breakpoints:{
+900:{
+slidesPerView:3
+}
+}
+
+})
+
+})
+</script>

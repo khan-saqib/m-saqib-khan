@@ -1,16 +1,29 @@
 {{ 'c-mega.css' | asset_url | stylesheet_tag }}
-<header class="mega-menu">
-  <nav class="mega-nav">
+<header class="mega-header">
 
-    {% for block in section.blocks %}
-      <div class="mega-item" {{ block.shopify_attributes }}>
+  <div class="mega-header__inner">
 
-        <a href="{{ block.settings.main_link }}" class="mega-link">
-          {{ block.settings.title }}
-        </a>
+    <button class="mega-mobile-toggle">
+      ☰
+    </button>
 
-        {% unless block.type == 'simple_link' %}
+    <nav class="mega-nav">
+
+      {% for block in section.blocks %}
+
+        <div class="mega-item" data-block="{{ block.type }}" {{ block.shopify_attributes }}>
+
+          <a href="{{ block.settings.main_link }}" class="mega-item__link">
+            {{ block.settings.title }}
+          </a>
+
+          {% unless block.type == 'simple_link' %}
           <div class="mega-dropdown">
+
+            <button class="mega-back">
+              ← Back
+            </button>
+
             {% case block.type %}
 
               {% when 'links_products' %}
@@ -20,29 +33,60 @@
                 {% render 'mega-bundle-banner', block: block %}
 
             {% endcase %}
+
           </div>
-        {% endunless %}
+          {% endunless %}
 
-      </div>
-    {% endfor %}
+        </div>
 
-  </nav>
+      {% endfor %}
+
+    </nav>
+
+  </div>
+
 </header>
 
 <script>
-    document.querySelectorAll('.mega-link').forEach(link=>{
-  link.addEventListener('click',e=>{
-    if(window.innerWidth < 990){
-      e.preventDefault()
-      link.nextElementSibling.classList.add('open')
-    }
-  })
+const toggle = document.querySelector('.mega-mobile-toggle')
+const nav = document.querySelector('.mega-nav')
+
+toggle.addEventListener('click',()=>{
+nav.classList.toggle('open')
 })
 
-document.querySelectorAll('.back-btn').forEach(btn=>{
-  btn.onclick = ()=>{
-    btn.closest('.mega-dropdown').classList.remove('open')
-  }
+
+document.querySelectorAll('.mega-item__link').forEach(link=>{
+
+link.addEventListener('click',e=>{
+
+if(window.innerWidth < 990){
+
+const dropdown = link.nextElementSibling
+
+if(dropdown){
+
+e.preventDefault()
+
+dropdown.classList.add('active')
+
+}
+
+}
+
+})
+
+})
+
+
+document.querySelectorAll('.mega-back').forEach(btn=>{
+
+btn.addEventListener('click',()=>{
+
+btn.closest('.mega-dropdown').classList.remove('active')
+
+})
+
 })
 </script>
 

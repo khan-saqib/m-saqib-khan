@@ -1,46 +1,49 @@
 <div class="mega-bundle">
 
-  <div class="bundle-steps">
+  <div class="mega-bundle__steps">
 
-    <h3>{{ block.settings.heading }}</h3>
+    <h3>HOW YOU SAVE</h3>
 
-    <div class="steps">
+    <div class="bundle-progress">
 
-      <div class="step">
+      <div class="bundle-step unlocked">
         <span>10% OFF</span>
         <p>BUY 2</p>
+        <small>Unlocked!</small>
       </div>
 
-      <div class="step">
+      <div class="bundle-step">
         <span>15% OFF</span>
         <p>BUY 3</p>
+        <small>1 More To Unlock</small>
       </div>
 
-      <div class="step">
+      <div class="bundle-step">
         <span>20% OFF</span>
         <p>BUY 4</p>
+        <small>2 More To Unlock</small>
       </div>
 
-      <div class="step">
+      <div class="bundle-step">
         <span>FREE SHIPPING</span>
-        <p>SPEND $50</p>
+        <p>SPEND OVER $50</p>
       </div>
 
     </div>
 
   </div>
 
-  <div class="bundle-image">
+  <div class="mega-bundle__image">
 
-    {{ block.settings.image | image_url: width: 800 | image_tag }}
+    {{ block.settings.image | image_url: width: 900 | image_tag }}
 
-    <div class="bundle-buttons">
+    <div class="bundle-cta">
 
-      <a href="{{ block.settings.btn1_link }}" class="btn">
+      <a href="{{ block.settings.btn1_link }}" class="bundle-btn primary">
         {{ block.settings.btn1_text }}
       </a>
 
-      <a href="{{ block.settings.btn2_link }}" class="btn secondary">
+      <a href="{{ block.settings.btn2_link }}" class="bundle-btn secondary">
         {{ block.settings.btn2_text }}
       </a>
 
