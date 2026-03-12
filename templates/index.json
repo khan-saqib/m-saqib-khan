@@ -38,6 +38,55 @@
         "padding_bottom": 36
       }
     },
+    "c_mega_9aJyPq": {
+      "type": "c-mega",
+      "blocks": {
+        "bundle_banner_dYq6RE": {
+          "type": "bundle_banner",
+          "settings": {
+            "title": "Bundle",
+            "main_link": "",
+            "image": "shopify://shop_images/young-man-in-bright-fashion_925x_b3b7ebd6-c91f-496a-a516-45403497ea25.jpg",
+            "btn1_text": "test",
+            "btn1_link": "",
+            "btn2_text": "test2",
+            "btn2_link": ""
+          }
+        },
+        "links_products_VKxDVK": {
+          "type": "links_products",
+          "settings": {
+            "title": "Shop All",
+            "main_link": "",
+            "collection": "frontpage",
+            "heading_1": "Leashes",
+            "menu_1": "customer-account-main-menu",
+            "heading_2": "Leashes 2",
+            "menu_2": "footer",
+            "heading_3": "Leashes 3",
+            "menu_3": "main-menu",
+            "heading_4": "Leashes 4",
+            "menu_4": "customer-account-main-menu",
+            "heading_5": "",
+            "menu_5": ""
+          }
+        },
+        "simple_link_fBxDrh": {
+          "type": "simple_link",
+          "settings": {
+            "title": "Wholesale",
+            "main_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "bundle_banner_dYq6RE",
+        "links_products_VKxDVK",
+        "simple_link_fBxDrh"
+      ],
+      "name": "Mega Menu",
+      "settings": {}
+    },
     "c_hero_GEA3GH": {
       "type": "c-hero",
       "name": "TV – Gift Guide Hero",
@@ -126,61 +175,12 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
-    },
-    "c_mega_9aJyPq": {
-      "type": "c-mega",
-      "blocks": {
-        "bundle_banner_dYq6RE": {
-          "type": "bundle_banner",
-          "settings": {
-            "title": "Bundle",
-            "main_link": "",
-            "image": "shopify://shop_images/young-man-in-bright-fashion_925x_b3b7ebd6-c91f-496a-a516-45403497ea25.jpg",
-            "btn1_text": "test",
-            "btn1_link": "",
-            "btn2_text": "test2",
-            "btn2_link": ""
-          }
-        },
-        "links_products_VKxDVK": {
-          "type": "links_products",
-          "settings": {
-            "title": "Shop All",
-            "main_link": "",
-            "collection": "frontpage",
-            "heading_1": "Leashes",
-            "menu_1": "customer-account-main-menu",
-            "heading_2": "Leashes 2",
-            "menu_2": "footer",
-            "heading_3": "Leashes 3",
-            "menu_3": "main-menu",
-            "heading_4": "Leashes 4",
-            "menu_4": "customer-account-main-menu",
-            "heading_5": "",
-            "menu_5": ""
-          }
-        },
-        "simple_link_fBxDrh": {
-          "type": "simple_link",
-          "settings": {
-            "title": "Wholesale",
-            "main_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "bundle_banner_dYq6RE",
-        "links_products_VKxDVK",
-        "simple_link_fBxDrh"
-      ],
-      "name": "Mega Menu",
-      "settings": {}
     }
   },
   "order": [
     "featured_collection",
+    "c_mega_9aJyPq",
     "c_hero_GEA3GH",
-    "c_product_quickshop_grid_cdRXQw",
-    "c_mega_9aJyPq"
+    "c_product_quickshop_grid_cdRXQw"
   ]
 }
