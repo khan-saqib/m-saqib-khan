@@ -1,0 +1,50 @@
+<div class="mega-links-products">
+
+  <div class="mega-links">
+
+    {% for i in (1..5) %}
+      {% assign heading = 'heading_' | append: i %}
+      {% assign menu = 'menu_' | append: i %}
+
+      {% if block.settings[heading] != blank %}
+        <div class="link-group">
+
+          <h4>{{ block.settings[heading] }}</h4>
+
+          <ul>
+            {% for link in linklists[block.settings[menu]].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+
+
+  <div class="mega-products swiper">
+
+    <div class="swiper-wrapper">
+
+      {% for product in collections[block.settings.collection].products limit: 8 %}
+        <div class="swiper-slide">
+
+          <a href="{{ product.url }}">
+            {{ product.featured_image | image_url: width: 500 | image_tag }}
+            <p>{{ product.title }}</p>
+            <span>{{ product.price | money }}</span>
+          </a>
+
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</div>
