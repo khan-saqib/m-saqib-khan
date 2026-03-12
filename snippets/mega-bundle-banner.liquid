@@ -1,0 +1,51 @@
+<div class="mega-bundle">
+
+  <div class="bundle-steps">
+
+    <h3>{{ block.settings.heading }}</h3>
+
+    <div class="steps">
+
+      <div class="step">
+        <span>10% OFF</span>
+        <p>BUY 2</p>
+      </div>
+
+      <div class="step">
+        <span>15% OFF</span>
+        <p>BUY 3</p>
+      </div>
+
+      <div class="step">
+        <span>20% OFF</span>
+        <p>BUY 4</p>
+      </div>
+
+      <div class="step">
+        <span>FREE SHIPPING</span>
+        <p>SPEND $50</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bundle-image">
+
+    {{ block.settings.image | image_url: width: 800 | image_tag }}
+
+    <div class="bundle-buttons">
+
+      <a href="{{ block.settings.btn1_link }}" class="btn">
+        {{ block.settings.btn1_text }}
+      </a>
+
+      <a href="{{ block.settings.btn2_link }}" class="btn secondary">
+        {{ block.settings.btn2_text }}
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
