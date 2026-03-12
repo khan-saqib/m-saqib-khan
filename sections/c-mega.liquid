@@ -1,0 +1,29 @@
+<header class="mega-menu">
+  <nav class="mega-nav">
+
+    {% for block in section.blocks %}
+      <div class="mega-item" {{ block.shopify_attributes }}>
+
+        <a href="{{ block.settings.main_link }}" class="mega-link">
+          {{ block.settings.title }}
+        </a>
+
+        {% unless block.type == 'simple_link' %}
+          <div class="mega-dropdown">
+            {% case block.type %}
+
+              {% when 'links_products' %}
+                {% render 'mega-links-products', block: block %}
+
+              {% when 'bundle_banner' %}
+                {% render 'mega-bundle-banner', block: block %}
+
+            {% endcase %}
+          </div>
+        {% endunless %}
+
+      </div>
+    {% endfor %}
+
+  </nav>
+</header>
