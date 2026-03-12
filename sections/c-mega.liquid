@@ -45,3 +45,60 @@ document.querySelectorAll('.back-btn').forEach(btn=>{
   }
 })
 </script>
+
+{% schema %}
+{
+  "name": "Mega Menu",
+  "blocks":[
+
+    {
+      "type":"links_products",
+      "name":"Links + Products",
+      "settings":[
+        { "type":"text","id":"title","label":"Menu Title"},
+        { "type":"url","id":"main_link","label":"Main Link"},
+        { "type":"collection","id":"collection","label":"Collection"},
+
+        { "type":"text","id":"heading_1","label":"Heading 1"},
+        { "type":"link_list","id":"menu_1","label":"Menu 1"},
+
+        { "type":"text","id":"heading_2","label":"Heading 2"},
+        { "type":"link_list","id":"menu_2","label":"Menu 2"},
+
+        { "type":"text","id":"heading_3","label":"Heading 3"},
+        { "type":"link_list","id":"menu_3","label":"Menu 3"},
+
+        { "type":"text","id":"heading_4","label":"Heading 4"},
+        { "type":"link_list","id":"menu_4","label":"Menu 4"},
+
+        { "type":"text","id":"heading_5","label":"Heading 5"},
+        { "type":"link_list","id":"menu_5","label":"Menu 5"}
+      ]
+    },
+
+    {
+      "type":"bundle_banner",
+      "name":"Bundle Banner",
+      "settings":[
+        { "type":"text","id":"title","label":"Menu Title"},
+        { "type":"url","id":"main_link","label":"Main Link"},
+        { "type":"image_picker","id":"image","label":"Image"},
+        { "type":"text","id":"btn1_text","label":"Button 1"},
+        { "type":"url","id":"btn1_link","label":"Button 1 Link"},
+        { "type":"text","id":"btn2_text","label":"Button 2"},
+        { "type":"url","id":"btn2_link","label":"Button 2 Link"}
+      ]
+    },
+
+    {
+      "type":"simple_link",
+      "name":"Simple Link",
+      "settings":[
+        { "type":"text","id":"title","label":"Title"},
+        { "type":"url","id":"main_link","label":"Link"}
+      ]
+    }
+
+  ]
+}
+{% endschema %}
